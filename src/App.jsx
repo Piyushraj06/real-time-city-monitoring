@@ -1,64 +1,45 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
-import Home from "./components/Home";
-import Historical from "./components/Historical";
-import MapView from "./components/MapView";
-import LiveData from "./components/LiveData";
-import About from "./components/About";
 import Navbar from "./components/Navbar";
-import { useEffect } from "react";
-
-// Scroll to Top on Route Change
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
-  return null;
-};
+import Home from "./components/Home";
+import About from "./components/About";
+import LiveData from "./components/LiveData";
+import Dashboard from "./components/Dashboard";
+import PredictiveAnalysis from "./components/PredictiveAnalysis";
+import SeherSuchna from "./components/SeherSuchna";
+import NoisePollution from "./components/NoisePollution";
+import WaterPollution from "./components/WaterPollution";
+import CityDetail from "./components/CityDetail";
+import WaterPollutionDetail from "./components/WaterPollutionDetail";
+import AirPollutionDashboard from "./components/airPollutionPowerBi";
 
 function App() {
-  const location = useLocation();
+  const { pathname } = useLocation();
+
+  // Hide Navbar on city detail pages and seher page
+  const hideNavbarRoutes = ["/noise", "/water", "/seher"];
+  const hideOnPatterns = ["/noise/", "/water/"]; // these cover dynamic city routes
+  const showMainNavbar =
+    !hideNavbarRoutes.includes(pathname) &&
+    !hideOnPatterns.some((pattern) => pathname.startsWith(pattern));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
-      <Navbar />
-      <ScrollToTop />
-      
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Home />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/historical"
-            element={
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <Historical />
-              </motion.div>
-            }
-          />
-          <Route
-            path="/map"
-            element={<MapView />}
-          />
-          <Route path="/live" element={<LiveData />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </AnimatePresence>
-    </div>
+    <>
+      {showMainNavbar && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/live" element={<LiveData />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/predictive" element={<PredictiveAnalysis />} />
+        <Route path="/powerBi" element={<AirPollutionDashboard/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/seher" element={<SeherSuchna />} />
+        <Route path="/noise" element={<NoisePollution />} />
+        <Route path="/water" element={<WaterPollution />} />
+        {/* Detail Routes */}
+        <Route path="/noise/:city" element={<CityDetail />} />
+        <Route path="/water/:city" element={<WaterPollutionDetail />} />
+      </Routes>
+    </>
   );
 }
 
