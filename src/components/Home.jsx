@@ -24,13 +24,13 @@ const precautions = [
     title: "Avoid Polluting Water",
     description: "Cleaner water = less environmental stress. It all connects.",
     icon: <FaTint className="text-blue-500 text-5xl" />,
-    image: "/public/assets/ian-talmacs-YTmNAmmO5bA-unsplash.jpg",
+    image: "/assets/ian-talmacs-YTmNAmmO5bA-unsplash.jpg",
   },
   {
     title: "Use Clean Energy",
     description: "Electric cars, solar power, wind energy — cleaner choices for cleaner air.",
     icon: <FaWind className="text-cyan-500 text-5xl" />,
-    image: "public/assets/theo-pan-PA0AxqW6pR0-unsplash.jpg",
+    image: "/assets/theo-pan-PA0AxqW6pR0-unsplash.jpg",
   },
 ];
 
