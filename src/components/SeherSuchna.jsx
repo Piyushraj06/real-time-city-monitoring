@@ -4,9 +4,9 @@ const SeherSuchna = () => {
   const navigate = useNavigate();
 
   const topics = [
-    { title: "Noise Pollution", image: "src/assets/noisepollution.png", link: "/noise" },
-    { title: "Water Pollution", image: "src/assets/waterPollution.jpg", link: "/water" },
-    { title: "Air Pollution", image: "src/assets/airpollution.jpg", link: "/" },
+    { title: "Noise Pollution", image: "/assets/noisepollution.png", link: "/noise" },
+    { title: "Water Pollution", image: "/assets/waterPollution.jpg", link: "/water" },
+    { title: "Air Pollution", image: "/assets/airpollution.jpg", link: "/" },
   ];
 
   return (

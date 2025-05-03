@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import WaterNavbar from "./WaterNavbar";
 
 const cities = [
-  { name: "Delhi", image: "/src/assets/delhi.jpg", path: "/water/delhi" },
-  { name: "Pune", image: "/src/assets/pune.jpg", path: "/water/pune" },
-  { name: "Vijayawada", image: "/src/assets/vijayawada.jpg", path: "/water/vijayawada" },
-  { name: "Bangalore", image: "/src/assets/banglore.jpg", path: "/water/bangalore" },
-  { name: "Chennai", image: "/src/assets/chennai.jpg", path: "/water/chennai" },
-  { name: "Hyderabad", image: "/src/assets/hyderabad.jpg", path: "/water/hyderabad" },
-  { name: "Mumbai", image: "/src/assets/mumbai.jpg", path: "/water/mumbai" },
-  { name: "Kolkata", image: "/src/assets/kolkata.jpg", path: "/water/kolkata" },
-  { name: "Patna", image: "/src/assets/patna.jpg", path: "/water/patna" },
-  { name: "Jaipur", image: "/src/assets/jaipur.jpg", path: "/water/jaipur" },
+  { name: "Delhi", image: "/assets/delhi.jpg", path: "/noise/delhi" },
+  { name: "Pune", image: "/assets/pune.jpg", path: "/noise/pune" },
+  { name: "Vijayawada", image: "/assets/vijayawada.jpg", path: "/noise/vijayawada" },
+  { name: "Bangalore", image: "/assets/banglore.jpg", path: "/noise/bangalore" },
+  { name: "Chennai", image: "/assets/chennai.jpg", path: "/noise/chennai" },
+  { name: "Hyderabad", image: "/assets/hyderabad.jpg", path: "/noise/hyderabad" },
+  { name: "Mumbai", image: "/assets/mumbai.jpg", path: "/noise/mumbai" },
+  { name: "Kolkata", image: "/assets/kolkata.jpg", path: "/noise/kolkata" },
+  { name: "Patna", image: "/assets/patna.jpg", path: "/noise/patna" },
+  { name: "Jaipur", image: "/assets/jaipur.jpg", path: "/noise/jaipur" },
 ];
 
 const WaterPollution = () => {
